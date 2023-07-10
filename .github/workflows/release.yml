@@ -48,7 +48,7 @@ jobs:
   release_docker_image:
     needs: verify
     name: Release Docker image to Labatt Registry
-    runs-on: ubuntu-latest
+    runs-on: [Linux, self-hosted]
 
     steps:
     - uses: actions/checkout@v2
