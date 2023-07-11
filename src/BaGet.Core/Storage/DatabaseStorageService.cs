@@ -33,7 +33,7 @@ namespace BaGet.Core
             var contents = await _context.PackageContents.SingleOrDefaultAsync(p => p.Path == path, cancellationToken);
             if (contents == null)
             {
-                throw new Exception($"PackageContents record not found for path: {path}");
+                throw new FileNotFoundException($"PackageContents record not found for path: {path}");
             }
             var ms = new MemoryStream(contents.Data);
             return ms;
